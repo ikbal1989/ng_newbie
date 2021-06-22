@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  ng-practice:
+    image: ng-practice
+    container_name: ng-practice
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - "4203:4203"
